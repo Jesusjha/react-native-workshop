@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 
 export const HomeScreen = ({ navigation }) => {
+
   const [count, setCount] = useState(0);
 
   const [isCounting, setIsCounting] = useState(false);
@@ -19,6 +20,7 @@ export const HomeScreen = ({ navigation }) => {
   };
 
   // create a useEffect function which increments the counter every 1 second
+
   useEffect(() => {
     if (isCounting) {
       const interval = setInterval(() => {
@@ -33,10 +35,12 @@ export const HomeScreen = ({ navigation }) => {
     setIsCounting(false);
   };
 
-  // go to the tictactoe screen
-  const goToTicTacToe = () => {
-    navigation.navigate("TicTacToe");
+  // go to the flexboxscreen screen
+
+  const goflexboxScreen = () => {
+    navigation.navigate("FlexboxScreen");
   };
+  
   return (
     <View style={styles.container}>
       <View
@@ -63,7 +67,7 @@ export const HomeScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.footer}>
-        <Button title="Go to TicTacToe Screen" onPress={goToTicTacToe} />
+        <Button title="Go to Flexbox Screen" onPress={goflexboxScreen} />
       </View>
       <StatusBar style="auto" />
     </View>
